@@ -5,12 +5,12 @@ const typeDefs = gql`
     _id: ID
     username: String!
     email: String!
-    bookCount: TYPE?
+    bookCount: Int
     savedBooks: [Book]!
   }
 
   type Book {
-    bookId: TYPE?
+    bookId:  ID!
     authors: [String]
     description: String!
     title: String!
@@ -31,7 +31,8 @@ const typeDefs = gql`
     login:(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(authors: [String], description: String!, title: String!, bookId: String!, image: String, link: String): User
-    // LOOK INTO INPUT TYPE
     removeBook(bookId: String!): User
   }
 `;
+
+module.exports = typeDefs;
