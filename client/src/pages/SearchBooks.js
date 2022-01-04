@@ -7,7 +7,7 @@ import { SAVE_BOOK } from '../utils/mutations';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 import Auth from '../utils/auth';
-// import { saveBook, searchGoogleBooks } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 
 const SearchBooks = () => {
   // create state for holding returned google api data
