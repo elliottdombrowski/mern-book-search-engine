@@ -47,7 +47,7 @@ const SearchBooks = () => {
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
-      }));
+      })); 
 
       setSearchedBooks(bookData);
       setSearchInput('');
@@ -71,8 +71,7 @@ const SearchBooks = () => {
     try {
       // const response = await saveBook(bookToSave, token);
       const { data } = await saveBook({
-        //OR IS IT SAVEDBOOKIDS??
-        variables: { ...searchedBooks },
+        variables: { ...savedBookIds },
       });
 
       Auth.login(data.saveBook.token);
