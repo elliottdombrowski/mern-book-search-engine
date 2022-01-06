@@ -42,7 +42,7 @@ const resolvers = {
         },
 
         saveBook: async (parent, args, context) => {
-          const user = await User.findOne({ _id: context.user._id }).populate('savedBooks');
+          const user = await User.findOne({ _id: context.user._id }).populate('Book');
           const token = signToken(user);
 
           return { token, user };
